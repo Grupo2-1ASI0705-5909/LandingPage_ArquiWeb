@@ -1,0 +1,328 @@
+body {
+    margin: 0; /* Elimina márgenes por defecto */
+    background-color: #1E1E1E; /* Fondo negro */
+    background-image: url('imagenes/fondo2.png');
+    background-size: cover;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    width: 100vw;
+    box-sizing: border-box;
+}
+:root{
+    --poppins: 'Poppins', sans-serif;
+    --open-sans: 'Open sans', sans-serif;
+    --naranja: hsl(29, 83%, 41%);
+    --blanco_titulo: #E9FFF7;
+    --plomo:#E5E6E5;
+    --plomo_parrafo_oscuro:#898ca9;
+
+
+    --padding-container:80px 0;
+
+}
+
+.barra_inicio {
+    font-size: 12px;
+    font-family: sans-serif;
+    /* Variables de color */
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 85px;
+    width: 90%; /* Ajusta este valor para hacer la barra más ancha o estrecha */
+    max-width: 1408px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    /* Posicionamiento fijo centrado */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    backdrop-filter: blur(16px);
+    background-color: rgba(217, 217, 217, 0.1);
+    border-radius: 40px;
+    opacity: 1;
+    /* Borde opcional */
+    --border-bottom-width: 1px;
+    --border-color: rgba(255, 255, 255, 0.4);
+    --border-left-width: 1px;
+    --border-right-width: 1px;
+    --border-style: solid;
+    --border-top-width: 1px;
+}
+
+
+.texto_barra {
+    margin-left: 10px;
+    font-size: 40px; /* Tamaño de fuente actualizado */
+    font-family: 'Poppins', sans-serif; /* Familia de fuentes actualizada */
+    font-weight: 600; /* Equivalente a SemiBold */
+    color: #DD8636; /* Color actualizado */
+}
+/* Estilos generales para el contenedor del QR y la descarga */
+.framer-1dc0k7u {
+    display: flex; /* Alinea el contenido horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: fixed; /* Fija la posición en la esquina inferior derecha */
+    bottom: 20px; /* Distancia del borde inferior */
+    right: 20px; /* Cambiado de left a right */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px 30px; /* Aumentar espaciado interno para agrandar la barra verticalmente (padding superior e inferior) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+
+}
+
+
+/* Estilos para el texto de "Descargar app" */
+.framer-e1uzgd {
+    display: flex; /* Para que el texto se alinee correctamente */
+    flex-direction: column; /* Mantiene el texto en una columna */
+    justify-content: center; /* Centra verticalmente */
+    flex-shrink: 0; /* Evita que el contenedor del texto se reduzca */
+}
+
+.framer-text {
+    text-decoration: none; /* Elimina cualquier subrayado */
+    font-size: 20px; /* Tamaño de fuente adecuado */
+    font-weight: 700; /* Negrita */
+    text-align: center; /* Centra el texto */
+    color: black; /* Color por defecto */
+}
+
+.framer-text:active {
+    color: #A9A9A9; /* Color plomo al hacer clic */
+}
+
+a.framer-1dc0k7u {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Mantiene el color del texto */
+}
+
+/* Estilos para el ícono QR */
+.framer-iSgFf {
+    height: 70px; /* Altura del QR */
+    width: 70px; /* Anchura del QR */
+    margin-left: 10px; /* Espaciado entre texto y QR */
+}
+
+.hero__main{
+    text-align: center;
+    color: black;
+    margin: 180px 0;
+
+}
+.hero__title{
+    font-family: var(--poppins);
+    font-size: 76px;
+    text-align: center;
+    color: var(--blanco_titulo);
+}
+.highlight {
+    color: var(--naranja) /* Cambia este valor al color que desees */
+}
+.hero__paragraph{
+    font-size: 25px; /* Cambia el tamaño según lo que necesites */
+    color: var(--plomo);
+    line-height: 1.2;
+    margin: 80px 0;
+
+}
+.cta {
+    font-family: var(--poppins);
+    font-size: 25px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 16px 60px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:active {
+    background-color: #d1d1d1; /* Cambia a otro color solo mientras se mantiene presionado */
+}
+.cta:hover {
+    background-color: #b8b3b3; /* Cambia a otro color cuando el cursor está encima */
+}
+
+.submenus {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    margin: 550px auto; /* Centra el contenedor horizontalmente */
+    max-width: 90%; /* Limita el ancho máximo para que no se salga de la pantalla */
+    height: 400px;
+    justify-content: center;
+}
+.submenus > * {
+    min-width: 350px; /* Cambia este valor para ajustar el ancho mínimo */
+
+    height: 400px; /* Ajusta la altura de los submenús aquí */
+
+    
+}
+
+.card {
+    background-color: #1A1818;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin: 0px 80px;
+}
+
+.card:hover {
+    transform: translateY(-50px);
+}
+
+.icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.enlace {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.enlace:hover {
+    color: #ffd700;
+}
+
+.flecha {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Animación suave */
+}
+.enlace:hover .flecha {
+    transform: translateX(10px); /* Mueve la flecha hacia la derecha */
+    transition: transform 0.3s ease; /* Suaviza el movimiento */
+}
+.subtitulos2{
+    font-family: var(--poppins);
+    font-size: 32px;
+    text-align: center;
+    color:white;
+}
+
+.parrafo2{
+    font-family: var(--poppins);
+    font-size: 20px;
+    text-align: center;
+    color:var(--plomo_parrafo_oscuro);
+}
+
+.hero__main3 {
+    text-align: center;
+    margin: -380px auto;
+}
+
+.titulo3 {
+    font-family: var(--poppins);
+    font-size: 70px;
+    text-align: center;
+    color: white;
+}
+
+.cta3 {
+    font-family: var(--poppins);
+    font-size: 25px;
+    display: inline-block;
+    background-color: #FF9500;
+    color: white;
+    text-decoration: none;
+    padding: 16px 60px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Suaviza la animación */
+}
+
+.cta3:hover {
+    background-color: #FF7E00; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta un poco el tamaño */
+}
+
+.cta3:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+.cta3 {
+    position: relative; /* o absolute si quieres que esté fuera del flujo del documento */
+    top: 1800px; /* Mueve el elemento en el eje Y */
+    left: 160px; /* Mueve el elemento en el eje X */
+  }
+  
+  .cta1 {
+    position: relative; 
+    top: 950px;
+    left: 710px;
+  }
+
+
+.cta1 {
+    font-family: var(--poppins);
+    font-size: 25px;
+    display: inline-block;
+    background-color: #FF9500;
+    color: white;
+    text-decoration: none;
+    padding: 16px 60px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Suaviza la animación */
+    
+}
+
+.cta1:hover {
+    background-color: #FF7E00; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta un poco el tamaño */
+}
+
+.cta1:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+
+.ultimo_parrafo{
+    margin: 0px 0px;
+   
+   }
+   
+   .ultimo_parrafo {
+       /* Ajusta aquí la posición en X e Y */
+       transform: translateX(70px) translateY(200px); /* Modifica estos valores según tus necesidades */
+       transition: transform 0.3s ease; /* Suaviza la transición */
+   }
+   
+   
+   .parrafo_ultimo{
+       font-family: var(--poppins);
+       font-size: 18px;
+       color: #676767;
+       margin: 50px 0;
+   }
+   
+   .ultimo_parrafo1{
+       margin: 925px 0px;
+      
+      }
+
