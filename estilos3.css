@@ -1,12 +1,18 @@
 body {
-    margin: 0; /* Elimina márgenes por defecto */
-    background-color: #1E1E1E; /* Fondo negro */
-    background-image: url('imagenes/fondo3.png');
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E1E;
+    background-image: url('./imagenes/fondo3.png');
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen al hacer scroll */
     background-repeat: no-repeat;
-    width: 100vw;
-    box-sizing: border-box;
+    min-height: 100vh; /* Altura mínima de toda la ventana */
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
+
 :root{
     --poppins: 'Poppins', sans-serif;
     --open-sans: 'Open sans', sans-serif;
@@ -14,16 +20,19 @@ body {
     --blanco_titulo: #E9FFF7;
     --plomo:#E5E6E5;
     --plomo_parrafo_oscuro:#898ca9;
-
-
     --padding-container:80px 0;
+}
 
+/* Contenedor principal para el contenido */
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .barra_inicio {
     font-size: 12px;
     font-family: sans-serif;
-    /* Variables de color */
     box-sizing: border-box;
     -webkit-font-smoothing: inherit;
     align-items: center;
@@ -31,107 +40,70 @@ body {
     flex-direction: row;
     gap: 10px;
     height: 85px;
-    width: 90%; /* Ajusta este valor para hacer la barra más ancha o estrecha */
+    width: 90%;
     max-width: 1408px;
     margin: 0 auto;
     padding: 10px 16px;
-    /* Posicionamiento fijo centrado */
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    z-index: 1000;
     backdrop-filter: blur(16px);
     background-color: rgba(217, 217, 217, 0.1);
     border-radius: 40px;
     opacity: 1;
-    /* Borde opcional */
-    --border-bottom-width: 1px;
-    --border-color: rgba(255, 255, 255, 0.4);
-    --border-left-width: 1px;
-    --border-right-width: 1px;
-    --border-style: solid;
-    --border-top-width: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
-
 
 .texto_barra {
     margin-left: 10px;
-    font-size: 40px; /* Tamaño de fuente actualizado */
-    font-family: 'Poppins', sans-serif; /* Familia de fuentes actualizada */
-    font-weight: 600; /* Equivalente a SemiBold */
-    color: #DD8636; /* Color actualizado */
-}
-/* Estilos generales para el contenedor del QR y la descarga */
-.framer-1dc0k7u {
-    display: flex; /* Alinea el contenido horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    position: fixed; /* Fija la posición en la esquina inferior derecha */
-    bottom: 20px; /* Distancia del borde inferior */
-    right: 20px; /* Cambiado de left a right */
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px 30px; /* Aumentar espaciado interno para agrandar la barra verticalmente (padding superior e inferior) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #DD8636;
 }
 
-
-/* Estilos para el texto de "Descargar app" */
-.framer-e1uzgd {
-    display: flex; /* Para que el texto se alinee correctamente */
-    flex-direction: column; /* Mantiene el texto en una columna */
-    justify-content: center; /* Centra verticalmente */
-    flex-shrink: 0; /* Evita que el contenedor del texto se reduzca */
-}
-
-.framer-text {
-    text-decoration: none; /* Elimina cualquier subrayado */
-    font-size: 20px; /* Tamaño de fuente adecuado */
-    font-weight: 700; /* Negrita */
-    text-align: center; /* Centra el texto */
-    color: black; /* Color por defecto */
-}
-
-.framer-text:active {
-    color: #A9A9A9; /* Color plomo al hacer clic */
-}
-
-a.framer-1dc0k7u {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Mantiene el color del texto */
-}
-
-/* Estilos para el ícono QR */
-.framer-iSgFf {
-    height: 70px; /* Altura del QR */
-    width: 70px; /* Anchura del QR */
-    margin-left: 10px; /* Espaciado entre texto y QR */
+/* Sección hero principal */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 20px;
 }
 
 .hero__main{
     text-align: center;
     color: black;
-    margin: 180px 0;
-
+    margin: 0;
+    max-width: 1200px;
 }
+
 .hero__title{
     font-family: var(--poppins);
     font-size: 76px;
     text-align: center;
     color: var(--blanco_titulo);
+    margin: 0 0 30px 0;
 }
-.highlight {
-    color: var(--naranja) /* Cambia este valor al color que desees */
-}
-.hero__paragraph{
-    font-size: 25px; /* Cambia el tamaño según lo que necesites */
-    color: var(--plomo);
-    line-height: 1.2;
-    margin: 80px 0;
 
+.highlight {
+    color: var(--naranja);
 }
+
+.hero__paragraph{
+    font-size: 25px;
+    color: var(--plomo);
+    line-height: 1.4;
+    margin: 40px 0;
+    max-width: 800px;
+}
+
 .cta {
     font-family: var(--poppins);
     font-size: 25px;
@@ -141,62 +113,78 @@ a.framer-1dc0k7u {
     text-decoration: none;
     padding: 16px 60px;
     border-radius: 30px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    margin: 20px 10px;
+}
+
+.cta:hover {
+    background-color: #b8b3b3;
+    transform: translateY(-3px);
 }
 
 .cta:active {
-    background-color: #d1d1d1; /* Cambia a otro color solo mientras se mantiene presionado */
+    background-color: #d1d1d1;
+    transform: translateY(1px);
 }
-.cta:hover {
-    background-color: #b8b3b3; /* Cambia a otro color cuando el cursor está encima */
+
+/* Sección de tarjetas */
+.features-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
 }
 
 .submenus {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
     text-align: center;
-    margin: 550px auto; /* Centra el contenedor horizontalmente */
-    max-width: 90%; /* Limita el ancho máximo para que no se salga de la pantalla */
-    height: 400px;
     justify-content: center;
-}
-.submenus > * {
-    min-width: 350px; /* Cambia este valor para ajustar el ancho mínimo */
-
-    height: 400px; /* Ajusta la altura de los submenús aquí */
-
-    
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
     background-color: #1A1818;
     border-radius: 10px;
-    padding: 20px;
-    width: 300px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 350px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    margin: 0px 80px;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 300px;
 }
 
 .card:hover {
-    transform: translateY(-50px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .icono {
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--naranja);
 }
 
-h3 {
+.card h3 {
     font-size: 22px;
     margin-bottom: 15px;
+    color: white;
 }
 
-p {
+.card p {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    color: var(--plomo);
 }
 
 .enlace {
@@ -204,6 +192,8 @@ p {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
 .enlace:hover {
@@ -212,17 +202,20 @@ p {
 
 .flecha {
     display: inline-block;
-    transition: transform 0.3s ease; /* Animación suave */
+    margin-left: 5px;
+    transition: transform 0.3s ease;
 }
+
 .enlace:hover .flecha {
-    transform: translateX(10px); /* Mueve la flecha hacia la derecha */
-    transition: transform 0.3s ease; /* Suaviza el movimiento */
+    transform: translateX(10px);
 }
+
 .subtitulos2{
     font-family: var(--poppins);
     font-size: 32px;
     text-align: center;
     color:white;
+    margin-bottom: 20px;
 }
 
 .parrafo2{
@@ -230,11 +223,26 @@ p {
     font-size: 20px;
     text-align: center;
     color:var(--plomo_parrafo_oscuro);
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Sección final */
+.final-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
 }
 
 .hero__main3 {
     text-align: center;
-    margin: -380px auto;
+    max-width: 1200px;
 }
 
 .titulo3 {
@@ -242,9 +250,10 @@ p {
     font-size: 70px;
     text-align: center;
     color: white;
+    margin-bottom: 30px;
 }
 
-.cta3 {
+.cta3, .cta1 {
     font-family: var(--poppins);
     font-size: 25px;
     display: inline-block;
@@ -253,77 +262,151 @@ p {
     text-decoration: none;
     padding: 16px 60px;
     border-radius: 10px;
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Suaviza la animación */
+    transition: all 0.3s ease;
+    margin: 10px;
 }
 
-.cta3:hover {
-    background-color: #FF7E00; /* Cambio de color al pasar el mouse */
-    transform: scale(1.05); /* Aumenta un poco el tamaño */
+.cta3:hover, .cta1:hover {
+    background-color: #FF7E00;
+    transform: scale(1.05);
 }
 
-.cta3:active {
-    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+.cta3:active, .cta1:active {
+    transform: scale(0.95);
 }
 
-.cta3 {
-    position: relative; /* o absolute si quieres que esté fuera del flujo del documento */
-    top: 1800px; /* Mueve el elemento en el eje Y */
-    left: 160px; /* Mueve el elemento en el eje X */
-  }
-  
-  .cta1 {
-    position: relative; 
-    top: 950px;
-    left: 710px;
-  }
-
-
-.cta1 {
-    font-family: var(--poppins);
-    font-size: 25px;
-    display: inline-block;
-    background-color: #FF9500;
-    color: white;
-    text-decoration: none;
-    padding: 16px 60px;
+/* Botón de descarga fijo */
+.framer-1dc0k7u {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Suaviza la animación */
+    padding: 15px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.framer-1dc0k7u:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.framer-e1uzgd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.framer-text {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    margin: 0;
+}
+
+.framer-iSgFf {
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+}
+
+.framer-iSgFf img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ultimo_parrafo1{
+    font-family: var(--poppins);
+    font-size: 18px;
+    color: #676767;
+    text-align: center;
+    margin: 50px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .barra_inicio {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        top: 10px;
+    }
     
+    .hero__title {
+        font-size: 48px;
+    }
+    
+    .hero__paragraph {
+        font-size: 20px;
+    }
+    
+    .cta, .cta1, .cta3 {
+        font-size: 20px;
+        padding: 14px 40px;
+    }
+    
+    .titulo3 {
+        font-size: 48px;
+    }
+    
+    .submenus {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .framer-1dc0k7u {
+        padding: 12px 20px;
+    }
+    
+    .framer-text {
+        font-size: 16px;
+    }
+    
+    .framer-iSgFf {
+        height: 50px;
+        width: 50px;
+    }
 }
 
-.cta1:hover {
-    background-color: #FF7E00; /* Cambio de color al pasar el mouse */
-    transform: scale(1.05); /* Aumenta un poco el tamaño */
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 36px;
+    }
+    
+    .hero__paragraph {
+        font-size: 18px;
+    }
+    
+    .cta, .cta1, .cta3 {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+    
+    .titulo3 {
+        font-size: 36px;
+    }
+    
+    .texto_barra {
+        font-size: 28px;
+    }
 }
-
-.cta1:active {
-    transform: scale(0.95); /* Efecto de reducción al hacer clic */
-}
-
-
-.ultimo_parrafo{
-    margin: 0px 0px;
-   
-   }
-   
-   .ultimo_parrafo {
-       /* Ajusta aquí la posición en X e Y */
-       transform: translateX(70px) translateY(200px); /* Modifica estos valores según tus necesidades */
-       transition: transform 0.3s ease; /* Suaviza la transición */
-   }
-   
-   
-   .ultimo_parrafo1{
-       font-family: var(--poppins);
-       font-size: 18px;
-       color: #676767;
-       margin: 1770px 0;
-   }
-
-
 
 
   
   
   
+
 
